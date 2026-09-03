@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="ThéoeMaya Multimarcas - Catálogo Online">
+<title>ThéoeMaya Multimarcas | Catálogo Online</title>
+<style>
+:root{
+  --black:#111111;
+  --gold:#b78932;
+  --gold-light:#9b7025;
+  --white:#ffffff;
+  --gray:#555555;
+  --bg:#ffffff;
+  --card:#ffffff;
+  --line:#e7e1d7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:#111111;
+  line-height:1.45;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,calc(100% - 28px));margin:auto}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.header-inner{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;
+}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.logo{
+  width:48px;height:48px;border-radius:10px;object-fit:contain;
+  background:#fff;
+}
+.brand-name{font-size:15px;font-weight:800;white-space:nowrap;color:#111}
+.brand-sub{font-size:10px;color:#666;letter-spacing:1.1px;text-transform:uppercase}
+
+.whatsapp{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;background:#25d366;color:#fff;
+  border-radius:999px;padding:11px 16px;font-size:13px;font-weight:800;
+  white-space:nowrap;
+  transition:background .2s ease, transform .15s ease;
+}
+.whatsapp:hover{background:#1ebe57;transform:scale(1.03)}
+.whatsapp svg{width:22px;height:22px;flex-shrink:0}
+
+/* Hero */
+.hero{padding:28px 0 18px}
+.hero-box{
+  min-height:220px;border:1px solid rgba(0,0,0,.08);
+  border-radius:22px;padding:32px 22px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:#fafafa;
+  position:relative;overflow:hidden;
+}
+.kicker{
+  color:#111;font-size:12px;text-transform:uppercase;
+  letter-spacing:2px;font-weight:700;
+}
+h1{
+  font-size:clamp(26px,6.5vw,42px);
+  line-height:1.1;letter-spacing:-1.2px;
+  max-width:700px;margin:10px 0 12px;color:#111;font-weight:800;
+}
+.hero-copy{color:#333;max-width:560px;font-size:15px;font-weight:500}
+
+/* Categories pills */
+.categories{
+  display:flex;gap:8px;overflow-x:auto;padding:4px 0 22px;
+  scrollbar-width:none;
+}
+.categories::-webkit-scrollbar{display:none}
+.category-pill{
+  flex:0 0 auto;border:1px solid var(--line);background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.03);
+  color:#111;border-radius:999px;padding:9px 14px;
+  font-size:12px;font-weight:700;
+  transition:border-color .2s, color .2s;
+}
+.category-pill:hover{border-color:#111;color:#000}
+
+/* Search */
+.search-area{padding:0 0 22px}
+.search-box{position:relative}
+.search-input{
+  width:100%;height:48px;
+  border:1px solid var(--line);border-radius:14px;
+  background:#fff;color:#111;
+  padding:0 44px 0 16px;font:inherit;font-size:15px;outline:none;
+}
+.search-input::placeholder{color:#999}
+.search-input:focus{border-color:#111;box-shadow:0 0 0 3px rgba(0,0,0,.06)}
+.search-icon{
+  position:absolute;right:15px;top:50%;transform:translateY(-50%);
+  color:#666;font-size:17px;pointer-events:none;
+}
+.search-status{margin-top:9px;color:var(--gray);font-size:12px}
+
+/* Category sections */
+.category{scroll-margin-top:90px;margin:0 0 40px}
+.category-title{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.category-title:before{
+  content:"";display:block;width:4px;height:22px;background:#111;border-radius:4px;
+}
+.category h2{font-size:20px;letter-spacing:-.4px;color:#111;font-weight:800}
+.category-count{margin-left:auto;color:var(--gray);font-size:12px}
+
+/* Product grid */
+.grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+}
+.product{
+  background:var(--card);border:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  border-radius:14px;overflow:hidden;
+}
+.product-img{
+  width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#f5f5f5;
+  cursor:pointer;
+  transition:opacity .2s ease;
+}
+.product-img:hover{opacity:.92}
+.product-info{padding:11px 12px 14px}
+.product-name{
+  font-size:13px;font-weight:700;min-height:36px;color:#111;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.price{
+  font-size:15px;font-weight:800;color:#111;margin-top:5px;
+}
+
+/* Empty */
+.empty-state{
+  padding:32px 16px;border:1px dashed var(--line);border-radius:16px;
+  color:var(--gray);text-align:center;font-size:14px;
+}
+
+/* Footer */
+footer{
+  margin-top:20px;border-top:1px solid var(--line);
+  padding:28px 0 40px;background:#fafafa;
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+}
+.footer-title{font-weight:800;font-size:15px;color:#111}
+.footer-copy{font-size:12px;color:var(--gray);margin-top:4px}
+.footer-whatsapp{margin-left:auto}
+
+@media(min-width:650px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .hero-box{padding:40px}
+}
+@media(min-width:980px){
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+}
+
+/* Lightbox / visualizador de imagem */
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.92);
+  padding:16px;
+  touch-action:none;
+  -webkit-user-select:none;
+  user-select:none;
+}
+.lightbox.is-open{
+  display:flex;
+}
+.lightbox-content{
+  width:min(96vw,720px);
+  max-height:94vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.lightbox-img{
+  max-width:96vw;
+  max-height:76vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:8px;
+  box-shadow:0 8px 40px rgba(0,0,0,.45);
+  pointer-events:none;
+  touch-action:none;
+}
+.lightbox-info{
+  width:min(96vw,620px);
+  background:#fff;
+  border-radius:14px;
+  padding:12px 14px 14px;
+  text-align:center;
+  box-shadow:0 6px 24px rgba(0,0,0,.28);
+}
+.lightbox-name{
+  font-size:16px;
+  line-height:1.3;
+  font-weight:800;
+  color:#111;
+}
+.lightbox-price{
+  font-size:17px;
+  font-weight:800;
+  color:#111;
+  margin-top:4px;
+}
+.lightbox-whatsapp{
+  width:50px;
+  height:50px;
+  margin:10px auto 0;
+  border:none;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+  transition:transform .15s ease, background .2s ease;
+}
+.lightbox-actions{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px}
+.lightbox-actions .lightbox-whatsapp{margin:0}
+.lightbox-share{width:50px;height:50px;border:none;border-radius:50%;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.lightbox-share:active{transform:scale(.96)}
+.lightbox-share svg{width:25px;height:25px}
+.lightbox-whatsapp:hover{background:#1ebe57;transform:scale(1.05)}
+.lightbox-whatsapp:active{transform:scale(.96)}
+.lightbox-whatsapp svg{width:27px;height:27px}
+.lightbox-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:52px;
+  height:52px;
+  border:none;
+  border-radius:50%;
+  background:#fff;
+  color:#111;
+  font-size:32px;
+  font-weight:700;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  z-index:10001;
+  transition:transform .15s ease, background .15s ease;
+}
+.lightbox-close:hover{
+  background:#f0f0f0;
+  transform:scale(1.08);
+}
+.lightbox-close:active{
+  transform:scale(.96);
+}
+body.lightbox-open{
+  overflow:hidden;
+}
+@media(max-width:650px){
+  .lightbox{padding:12px}
+  .lightbox-content{gap:8px;max-height:94vh}
+  .lightbox-img{max-height:68vh;max-width:94vw}
+  .lightbox-info{padding:10px 12px 12px}
+  .lightbox-name{font-size:14px}
+  .lightbox-price{font-size:16px}
+  .lightbox-whatsapp{width:46px;height:46px;margin-top:8px}
+  .lightbox-whatsapp svg{width:25px;height:25px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="#">
+      <img class="logo" src="data:image/png;base64,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" alt="ThéoeMaya Multimarcas">
+      <div>
+        <div class="brand-name">ThéoeMaya Multimarcas</div>
+        <div class="brand-sub">Catálogo digital</div>
+      </div>
+    </a>
+    <a class="whatsapp" id="topWhatsapp" href="#" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-box">
+      <div class="kicker">CATÁLOGO ONLINE</div>
+      <h1>Escolha seus produtos<br>e fale conosco.</h1>
+      <p class="hero-copy">Para comprar ou tirar dúvidas, fale diretamente pelo WhatsApp.</p>
+    </div>
+  </section>
+
+  <nav class="categories" id="categoryNav" aria-label="Categorias"></nav>
+
+  <section class="search-area" aria-label="Busca no catálogo">
+    <div class="search-box">
+      <input class="search-input" id="productSearch" type="search" placeholder="Buscar produto pelo nome..." autocomplete="off" aria-label="Buscar produto pelo nome">
+      <span class="search-icon">⌕</span>
+    </div>
+    <div class="search-status" id="searchStatus" aria-live="polite"></div>
+  </section>
+
+  <div id="catalog"></div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-title">ThéoeMaya Multimarcas</div>
+      <div class="footer-copy">Veja os produtos e fale conosco pelo WhatsApp.</div>
+    </div>
+    <a class="whatsapp footer-whatsapp" id="footerWhatsapp" href="#" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</footer>
+
+<!-- Visualizador de imagem (lightbox) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização do produto">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <div class="lightbox-info">
+      <div class="lightbox-name" id="lightboxName"></div>
+      <div class="lightbox-price" id="lightboxPrice"></div>
+      <div class="lightbox-actions">
+      <button type="button" class="lightbox-whatsapp" id="lightboxWhatsapp" aria-label="Pedir pelo WhatsApp" title="Pedir pelo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </button>
+      <button type="button" class="lightbox-share" id="lightboxShare" aria-label="Compartilhar produto" title="Compartilhar produto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.59 13.51 6.83 3.98"></path><path d="m15.41 6.51-6.82 3.98"></path></svg>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/*
+==========================================================
+EDITAR CATÁLOGO — ÚNICA ÁREA QUE VOCÊ PRECISA MEXER
+==========================================================
+
+Para adicionar ou alterar produtos, edite apenas o objeto CONFIG abaixo.
+
+Formato de cada produto:
+{
+  name: "Nome do produto",
+  price: "R$ 99,90",
+  image: "images/produtos/foto.jpg"   // ou URL completa
+}
+
+Dica: coloque as fotos na pasta images/produtos/
+==========================================================
+*/
+
+const CONFIG = {
+  whatsapp: "5537998134286",
+
+  categories: [
+    {
+      id: "casa-utilidades",
+      name: "Casa e Utilidades",
+      products: [
+        { name: "Jogo de passadeiras trançado 3 peças", price: "R$ 250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-09-53-859.jpg?updatedAt=1787783799450" },
+        { name: "Tapete de sala aveludado 2,00×2,40m", price: "R$ 450,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-10-27-718.jpg?updatedAt=1787783799235" },
+        { name: "Jogo de tapetes de banheiro 3 peças", price: "R$ 90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-12-16-485.jpg?updatedAt=1787783799490" },
+        { name: "Cortina de  tecido linho Blackout 4 Metros", price: "R$ 450,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-11-21-499.jpg?updatedAt=1787783799219" },
+        { name: "Espelho decorativo oval com led 60cm", price: "R$ 350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-13-18-119.jpg?updatedAt=1787783799525" },
+        { name: "Espelho Emoldurado  Euro 0,60x1,60m", price: "R$ 350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-14-04-476.jpg?updatedAt=1787783799374" },
+        { name: "Tapete de sala peludo 2.0x1.40m", price: "R$ 240,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-15-05-695.jpg?updatedAt=1787783799122" },
+        { name: "Cortina Blackout com voil grande 2.80x2.60m", price: "R$ 290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-15-50-564.jpg?updatedAt=1787783799302" },
+        { name: "Colcha Romantic solteiro bordado inglês", price: "R$ 290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-16-50-071.jpg?updatedAt=1787783799340" },
+        { name: "Kit de Almofadas Florença 5 peças", price: "R$ 210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_19-17-39-847.jpg?updatedAt=1787783799129" },
+        { name: "Colcha Cobreleito Casal com 2 porta travesseiros", price: "R$260,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_12-59-32-043.jpg?updatedAt=1788354104706" },
+        { name: "Colcha Cobreleito Queen com 2 porta travesseiros", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_13-00-23-117.jpg?updatedAt=1788354104342" },
+        { name: "Kit de Garrafa com 4 Canecas de porcelana e 2 Potes", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_12-58-29-479.jpg?updatedAt=1788354104453" },
+        { name: "Jogo de talheres inox Sunshine 24 peças", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_12-57-19-738.jpg?updatedAt=1788354103952" },
+        { name: "Jarra 2 Litros com 6 copos de plástico reforçado", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_12-55-26-262.jpg?updatedAt=1788354104552" },
+        { name: "Colcha Cobreleito Casal Estampado com 2 porta travesseiros", price: "R$260,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_14-53-34-848.jpg?updatedAt=1788354104743" },
+        { name: "Colcha Cobreleito Queen Estampado com 2 porta travesseiros", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_14-56-17-024.jpg?updatedAt=1788354104751" },
+        { name: "Colcha Cobreleito King com 2 porta travesseiros", price: "R$320,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_14-54-39-505.jpg?updatedAt=1788354104327" },
+        { name: "Manta infantil com naninha Masculino", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_14-59-37-252.jpg?updatedAt=1788354104891" },
+        { name: "Manta infantil com naninha Feminina", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_14-58-27-530.jpg?updatedAt=1788354104440" },
+        { name: "Conjunto de Utensílios de cozinha Silicone com facas e tábua de corte", price: "R$ 320,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_16-33-55-104.jpg?updatedAt=1788354103986" },
+        { name: "Kit de utensílios de silicone 12 peças", price: "R$180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_16-35-29-284.jpg?updatedAt=1788354104623" },
+        { name: "Copo térmico colorido 1200ml com canudo", price: "R$ 160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_16-36-39-571.jpg?updatedAt=1788354104482" },
+        { name: "Pipoqueira antiaderente 4.5 Litros com tampa de vidro", price: "R$240,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_16-37-58-367.jpg?updatedAt=1788354103950" },
+        { name: "Jogo de assadeiras de vidro 2 peças", price: "R$180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_16-50-14-768.jpg?updatedAt=1788354104893" },
+        { name: "Frigideira antiaderente 4 ovos", price: "R$ 110,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_20-49-00-029.jpg?updatedAt=1788354104914" },
+        { name: "Jogo de panelas antiaderente 7 peças com tampa de vidro", price: "R$890,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_20-50-02-958.jpg?updatedAt=1788354104095" },
+        { name: "Jogo de mantimentos estampados tampa de  Rosca", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-31_20-50-59-041.jpg?updatedAt=1788354104647" },
+        { name: "Jogo de panelas Antiaderente Alegrete 5 peças", price: "R$550,00", image: "https://ik.imagekit.io/theoemayamultimarcas/IMG_20260901_181915.jpg?updatedAt=1788354103855" },
+        { name: "Aparelho de jantar porcelana estampado Biona 20 peças", price: "R$ 580,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_19-01-19-517.jpg?updatedAt=1788354104254" },
+        { name: "Aparelho de jantar porcelana estampado Cereja 20 peças", price: "R$580,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_19-03-56-477.jpg?updatedAt=1788354104905" },
+        { name: "Tábua de corte estampada", price: "R$40,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_19-07-52-700.jpg?updatedAt=1788354104839" },
+        { name: "Jogo de mantimentos estampados tampa de pressão", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_19-11-01-094.jpg?updatedAt=1788354103961" },
+        { name: "Frigideira antiaderente 24 cm Alegrete", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-34-02-989.jpg?updatedAt=1788354104722" },
+        { name: "Frigideira antiaderente cerâmica 26cm Fratelli", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-34-48-564.jpg?updatedAt=1788354104007" },
+        { name: "Jogo de formas assadeiras redondas 4 peças", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-35-35-153.jpg?updatedAt=1788354104617" },
+        { name: "Toalha de banho Premium Adulto", price: "R$70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-36-35-055.jpg?updatedAt=1788354104722" },
+        { name: "Kit de lixeira com balde e pá", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-37-29-256.jpg?updatedAt=1788354103749" },
+        { name: "Fruteira com mármore 3 andares", price: "R$650,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-39-45-539.jpg?updatedAt=1788354104727" },
+        { name: "Canivete tático com lanterna", price: "R$70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_12-02-50-224.jpg?updatedAt=1788376511312" },
+        { name: "Panela de pressão 4.5 Litros Fechamento externo", price: "R$380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_12-27-49-270.jpg?updatedAt=1788376511430" },
+        { name: "Garrafa térmica infantil Stitch 600ml", price: "R$110,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_12-01-19-596.jpg?updatedAt=1788376510907" },
+        { name: "Pano de prato estampado com viés", price: "R$9,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-59-13-524.jpg?updatedAt=1788376511128" },
+        { name: "Amolador de facas e tesouras", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-58-31-213.jpg?updatedAt=1788376511400" },
+        { name: "Jogo de Jarra Bangkok com 6 copos de vidro", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-56-52-851.jpg?updatedAt=1788376511801" },
+        { name: "Jogo de tabuleiros assadeiras retangulares grandes 4 peças", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-56-03-167.jpg?updatedAt=1788376511331" },
+        { name: "Jogo de taças Crystal vinhedo 350ml 6 peças", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-55-25-121.jpg?updatedAt=1788376511406" },
+        { name: "Jogo de Acessórios para Banheiro Luxo 6 peças", price: "R$320,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-54-42-127.jpg?updatedAt=1788376511881" },
+        { name: "Canivete Rústico com bainha", price: "R$50,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-54-06-535.jpg?updatedAt=1788376511952" },
+        { name: "Escorredor de louças suspenso", price: "R$ 390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_11-53-30-451.jpg?updatedAt=1788376511506" },
+        { name: "Garrafa térmica infantil Capivara 600ml", price: "R$110,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_15-58-44-657.jpg?updatedAt=1788376511202" },
+        { name: "Jogo de facas 6 peças com descascador", price: "R$ 120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_15-59-26-874.jpg?updatedAt=1788376510865" },
+        { name: "Faca cheff cabo de madeira", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-00-05-209.jpg?updatedAt=1788376510568" },
+        { name: "Kit de churrasco 3 peças Faca Garfo e Amolador", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-00-44-766.jpg?updatedAt=1788376511312" },
+        { name: "Espelho Redondo 60cm com suporte", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-01-28-534.jpg?updatedAt=1788376511376" },
+        { name: "Garrafa Térmica 600ml com medidor de temperatura", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-02-09-024.jpg?updatedAt=1788376510764" },
+        { name: "Jogo de potes com Jarra de plástico 5 peças", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-02-48-034.jpg?updatedAt=1788376511250" },
+        { name: "Panela de pressão 4.5 Litros Polida", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-04-51-850.jpg?updatedAt=1788376510915" },
+        { name: "Cuscuzeira individual de alumínio polido", price: "R$ 120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-06-39-956.jpg?updatedAt=1788376511384" },
+        { name: "Tapete de porta Bem Vindo antiderrapante", price: "R$45,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_23-16-00-437.png?updatedAt=1788376511639" },
+        { name: "Manta Brilha no escuro", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_23-13-17-684.jpg?updatedAt=1788376512084" },
+        { name: "Panela Hotel Grande craqueada", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_23-12-28-004.jpg?updatedAt=1788376510640" },
+        { name: "Varal de chão dobrável", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-38-57-086.jpg?updatedAt=1788376510562" },
+        { name: "Rede trançada Reforçada", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-08-28-136.jpg?updatedAt=1788376511420" },
+        { name: "Rede Reforçada premium Bucho de boi", price: "R$380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-09-21-867.jpg?updatedAt=1788376511319" },
+        { name: "Capa para sofá de malha 2 peças 3 e 2 Lugares", price: "R$310,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-10-40-260.jpg?updatedAt=1788376511302" },
+        { name: "Jogo de chaves catracas e soquetes 40 peças na maleta", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-11-18-686.jpg?updatedAt=1788376511524" },
+        { name: "Caixa organizadora telada grande 40 Litros", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-12-06-667.jpg?updatedAt=1788376511198" },
+      ]
+    },
+    {
+      id: "eletronicos-e-eletrodomesticos",
+      name: "Eletrônicos e Eletrodomésticos",
+      products: [
+        { name: "Fone de ouvido Bluetooth Imenso", price: "R$ 120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-23-20-482.jpg" },
+        { name: "Lanterna Multifuncional", price: "R$ 70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-24-04-093.jpg" },
+        { name: "Escova secadora Bivolt", price: "R$ 380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-24-31-513.jpg" },
+        { name: "Máquina de cortar cabelo Vizzo Agratto", price: "R$ 210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-24-52-999.jpg" },
+        { name: "Fone de ouvido Bluetooth sport OWS-T2", price: "R$ 90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-25-18-159.jpg" },
+        { name: "Caixa de som Bluetooth 50w KA-8193", price: "R$ 290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-25-43-809.jpg" },
+        { name: "Câmera de segurança Dupla Kapbom com alarme", price: "R$ 510,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-26-08-013.jpg" },
+        { name: "Panela de pressão elétrica inox 4 Litros unitermi", price: "R$ 650,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-26-33-203.jpg" },
+        { name: "Processador de alimentos Mixer 3 em 1", price: "R$ 360,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-27-01-158.jpg" },
+        { name: "Relógio inteligente Smartwatch S11 mini", price: "R$ 380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-28_13-23-43-376.jpg?updatedAt=1787934639463" }
+      ]
+    },
+    {
+      id: "cosmeticos",
+      name: "Cosméticos",
+      products: [
+        { name: "Perfume Árabe Feminino Ameerat Al Arab", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_12-05-29-975.jpg?updatedAt=1788112984203" },
+        { name: "Perfume Feminino C'EST LA VIE Brand G-012", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-37-06-826.jpg?updatedAt=1788112985071" },
+        { name: "Colônia Feminina Body Splash Glammour", price: "R$60,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_12-06-03-272.jpg?updatedAt=1788112960266" },
+        { name: "Kit de Banho Premium Cereja e Avelã 8 produtos", price: "R$380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_12-16-19-751.jpg?updatedAt=1788112984528" },
+        { name: "Kit Cronograma capilar Glammais", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_12-33-22-194.jpg?updatedAt=1788112984616" },
+        { name: "Kit cuidados para cachos com escova Glammais", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-31-45-811.jpg?updatedAt=1788112960059" },
+        { name: "Perfume Árabe Masculino FAKHAR pride Lattafa", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-28-45-753.jpg?updatedAt=1788112966064" },
+        { name: "Perfume Árabe Feminino FAKHAR pride Rosa", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-29-16-166.jpg?updatedAt=1788112985202" },
+        { name: "Perfume Árabe Masculino Asad Lattafa Preto", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-30-38-374.png?updatedAt=1788112985205" },
+        { name: "Perfume Árabe Masculino Asad Bourbon Lattafa", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-33-06-312.jpg?updatedAt=1788112984628" },
+        { name: "Body Splash perfume Árabe Masculino e Feminino", price: "R$ 140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-34-20-239.jpg?updatedAt=1788112966087" },
+        { name: "Perfume Árabe Feminino Yara orientales Rosa", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-35-17-295.jpg?updatedAt=1788112984487" },
+        { name: "Perfume Masculino 212 VIP MEN Brand G-008", price: "R$ 390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-37-59-643.jpg?updatedAt=1788112965887" },
+        { name: "Perfume Masculino Sauvage Brand G-100", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-38-43-623.jpg?updatedAt=1788112983326" },
+        { name: "Perfume Feminino Good Girl Brand G-126", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-39-46-371.jpg?updatedAt=1788112961755" },
+        { name: "Kit capilar Cachos perfeitos Glammour", price: "R$ 280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-40-51-427.jpg?updatedAt=1788112983658" },
+        { name: "Kit capilar Nutrição Fortalecedora Glammour", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-42-34-979.jpg?updatedAt=1788112960287" },
+        { name: "Kit capilar Paradox Prime 4 passos", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-43-23-461.jpg?updatedAt=1788112982362" },
+        { name: "Kit capilar Monovin com tônico de crescimento Minox", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-53-35-566.jpg?updatedAt=1788112961708" },
+        { name: "Kit capilar Liso perfeito Glammour", price: "R$ 280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-54-21-048.jpg?updatedAt=1788112981720" },
+        { name: "Perfume Feminino Scandal Brand 136 25ml", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-55-08-806.jpg?updatedAt=1788112957591" },
+        { name: "Perfume Feminino Fantasy Brand 132", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-56-16-510.jpg?updatedAt=1788112980282" },
+        { name: "Perfume Árabe Masculino Majestade 25ml", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-56-56-364.jpg?updatedAt=1788112960646" },
+        { name: "Perfume Árabe Masculino FAKHAR 25ml", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-57-38-708.jpg?updatedAt=1788112983411" },
+        { name: "Gloss labial Fruit com chaveiro", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_13-59-06-569.jpg?updatedAt=1788112966190" },
+        { name: "Linha completa de cuidados corporais Pistache Fenzza Skincare", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_14-00-14-125.jpg?updatedAt=1788112984862" },
+        { name: "Body Splash Perfume importado Feminino", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_12-05-02-214.jpg?updatedAt=1788112983129" },
+        { name: "Kit de cuidados íntimos Phálle Beauty", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_14-02-49-819.jpg?updatedAt=1788112982712" },
+        { name: "Kit capilar baba de Quiabo Glammour", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-30_14-04-16-154.jpg?updatedAt=1788112982308" }
+      ]
+    },
+    {
+      id: "moda-feminina",
+      name: "Moda Feminina",
+      products: [
+        { name: "Meia feminina cano longo", price: "R$ 8,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-01-24-460.jpg?updatedAt=1788045630240" },
+        { name: "Meia feminina cano curto", price: "R$ 8,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-04-33-356.jpg?updatedAt=1788045628243" },
+        { name: "Blusa Feminina TXC Malha Peruana", price: "R$ 90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-06-35-793.jpg?updatedAt=1788045629978" },
+        { name: "Calça Jeans feminina Marcas variadas", price: "R$ 190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-10-54-945.jpg?updatedAt=1788045630332" },
+        { name: "Lingerie Premium", price: "R$ 80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-13-49-926.jpg?updatedAt=1788045628168" },
+        { name: "Calcinha de renda fio duplo Nana Maria", price: "R$ 15,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-28-45-580.jpg?updatedAt=1788045627656" },
+        { name: "Calcinha fio duplo de renda com babado", price: "R$ 20,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-36-32-973.jpg?updatedAt=1788045627880" },
+        { name: "Calcinha cinta fio duplo cós alto", price: "R$ 25,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_11-41-11-953.jpg?updatedAt=1788045630231" },
+        { name: "Blusa Feminina Regata Suede Looping", price: "R$ 60,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-46-54-765.jpg?updatedAt=1788045630118" },
+        { name: "Blusa Feminina T-shirt luxo Appreciata", price: "R$ 80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-49-45-209.jpg?updatedAt=1788045630455" },
+        { name: "Conjunto Feminino estampado", price: "R$ 130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-52-22-851.jpg?updatedAt=1788045630217" },
+        { name: "Camisola de Malha Suede", price: "R$ 70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-56-57-733.jpg?updatedAt=1788045630215" },
+        { name: "Pijama de malha suede com cropped", price: "R$ 70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-58-15-263.jpg?updatedAt=1788045630117" },
+        { name: "Pijama de malha suede com blusa", price: "R$ 70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-59-02-274.jpg?updatedAt=1788045630239" },
+        { name: "Blusa Moletom 3 cabos Feminino Hugo Boss", price: "R$ 280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_18-59-47-054.jpg?updatedAt=1788045630788" },
+        { name: "Short Feminino Courino com cinto", price: "R$ 130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-00-33-385.jpg?updatedAt=1788045630159" },
+        { name: "Jaqueta Bobojaco Feminino peluciado", price: "R$ 450,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-03-41-138.jpg?updatedAt=1788045629994" },
+        { name: "Pijama Feminino Premium estampado", price: "R$ 70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-04-28-791.jpg?updatedAt=1788045630628" },
+        { name: "Blusa Regata Feminina Esportiva", price: "R$ 60,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-20-45-901.jpg?updatedAt=1788045630434" },
+        { name: "Blusa Feminina Baby look estampada", price: "R$ 70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-26-16-157.jpg?updatedAt=1788045630397" },
+        { name: "Pijama Premium Americano Appreciata", price: "R$ 150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-31-43-208.jpg?updatedAt=1788045630710" },
+        { name: "Camisa Dryfit Feminina", price: "R$ 80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-38-27-843.jpg?updatedAt=1788045630422" },
+        { name: "Blusa Feminina Baby look Muladeiras", price: "R$ 80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-42-52-479.jpg?updatedAt=1788045630661" },
+        { name: "Pijama de malha suede Plus size", price: "R$ 90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-45-46-121.jpg?updatedAt=1788045630147" },
+        { name: "Conjunto Esportivo Dryfit Feminino", price: "R$ 120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-48-53-705.jpg?updatedAt=1788045630522" },
+        { name: "Calça Legging Poliamida empina bumbum", price: "R$ 90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-53-26-766.jpg?updatedAt=1788045630310" },
+        { name: "Blusa Feminina Ribana canelada", price: "R$ 50,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_20-03-49-010.jpg?updatedAt=1788045630303" },
+        { name: "Conjunto de Legging Calça e Topper", price: "R$ 180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_20-06-32-209.jpg?updatedAt=1788045630232" },
+        { name: "Calça Jeans feminina Wideleg/Cargo", price: "R$ 220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_20-10-53-473.jpg?updatedAt=1788045630305" },
+        { name: "Blusa Moletom Feminino Estampado", price: "R$ 280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-29_19-18-58-188.jpg?updatedAt=1788045630585" }
+      ]
+    },
+    {
+      id: "moda-masculina",
+      name: "Moda Masculina",
+      products: [
+        { name: "Calça Masculina tecnológica", price: "R$ 160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_01-27-33-422.jpg?updatedAt=1787805151598" },
+        { name: "Bermuda masculina elastano premium", price: "R$ 120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804384036.jpg?updatedAt=1787805151789" },
+        { name: "Camisa Masculina de time", price: "R$ 80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787803985645.jpg?updatedAt=1787805151682" },
+        { name: "Calça de moletom masculina", price: "R$ 140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804118026.jpg?updatedAt=1787805151559" },
+        { name: "Calça Jeans masculina Marcas variadas", price: "R$ 190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804235622.jpg?updatedAt=1787805151572" },
+        { name: "Bermuda jeans masculina normal", price: "R$ 130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804431097.jpg?updatedAt=1787805151572" },
+        { name: "Meia Masculina cano longo", price: "R$ 8,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787803938795.jpg?updatedAt=1787805151617" },
+        { name: "Calça Jogger masculina", price: "R$ 190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804342048.jpg?updatedAt=1787805151559" },
+        { name: "Calça chimpa Masculina", price: "R$ 90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804025279.jpg?updatedAt=1787805151611" },
+        { name: "Camisa Masculina Gola Polo TXC Premium", price: "R$ 150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787804071181.jpg?updatedAt=1787805151605" }
+      ]
+    },
+    {
+      id: "moda-infantil",
+      name: "Moda Infantil",
+      products: [
+        {
+          name: "Conjunto infantil Feminino canelado",
+          price: "R$ 140,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/grok_1787750910393.jpg"
+        },
+        {
+          name: "Conjunto Infantil Quimby",
+          price: "R$ 90,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_14-47-24-870.jpg?updatedAt=1787767726804"
+        },
+        {
+          name: "Conjunto de verão infantil Feminino",
+          price: "R$ 70,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_14-46-40-708.jpg?updatedAt=1787767727018"
+        },
+        {
+          name: "Meia Infantil Feminina",
+          price: "R$ 8,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_14-45-43-780.jpg?updatedAt=1787767726864"
+        },
+        {
+          name: "Vestido Infantil Estampado",
+          price: "R$ 50,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_14-44-58-599.jpg"
+        },
+        {
+          name: "Pijama Infantil Inverno Feminino",
+          price: "R$ 90,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_14-48-47-864.jpg?updatedAt=1787767726875"
+        },
+        {
+          name: "Conjunto de Moletom Plush infantil Feminino",
+          price: "R$ 210,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-26_14-44-06-390.jpg?updatedAt=1787767726708"
+        },
+        {
+          name: "Meia infantil masculina",
+          price: "R$ 8,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-25-17-683.png"
+        },
+        {
+          name: "Bermuda Jeans infantil masculina",
+          price: "R$ 90,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-23-13-671.png?updatedAt=1787887065031"
+        },
+        {
+          name: "Conjunto de verão infantil masculino",
+          price: "R$ 70,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-26-07-800.jpg?updatedAt=1787887064730"
+        },
+        {
+          name: "Conjunto Infantil Masculino Meia estação",
+          price: "R$ 90,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-28-08-135.jpg?updatedAt=1787887064627"
+        },
+        {
+          name: "Calça Jeans Infantil Masculina",
+          price: "R$ 140,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-29-33-205.jpg?updatedAt=1787887064753"
+        },
+        {
+          name: "Pijama de inverno Infantil Masculino",
+          price: "R$ 90,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-24-28-624.jpg?updatedAt=1787887064722"
+        },
+        {
+          name: "Camisa de time Infantil Masculina",
+          price: "R$ 60,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-26-40-052.jpg?updatedAt=1787887064584"
+        },
+        {
+          name: "Camisa Infantil Malha peruana",
+          price: "R$ 60,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-28-59-098.jpg?updatedAt=1787887064642"
+        },
+        {
+          name: "Conjunto Infantil Moletom Plush masculino",
+          price: "R$ 210,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-30-45-308.jpg?updatedAt=1787887064819"
+        },
+        {
+          name: "Camisa Dryfit Masculina Infantil",
+          price: "R$ 50,00",
+          image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-08-27_23-27-32-234.jpg?updatedAt=1787887064632"
+        }
+      ]
+    }
+  ]
+};
+
+function whatsappUrl() {
+  // Sem mensagem pré-escrita — abre o chat direto
+  return `https://wa.me/${CONFIG.whatsapp}`;
+}
+
+function normalizeText(text) {
+  return String(text)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function getProducts() {
+  return CONFIG.categories.flatMap(cat =>
+    cat.products.map(product => ({
+      ...product,
+      categoryId: cat.id,
+      categoryName: cat.name
+    }))
+  );
+}
+
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"']/g, m => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  }[m]));
+}
+
+
+function fallbackImageData(productName) {
+  const safe = String(productName)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+      <rect width="900" height="900" fill="#f5f5f5"/>
+      <rect x="55" y="55" width="790" height="790" rx="28" fill="#ffffff" stroke="#e7e1d7" stroke-width="3"/>
+      <text x="450" y="405" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#111111">${safe}</text>
+      <text x="450" y="470" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#777777">Imagem do produto</text>
+    </svg>`;
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+
+function protectProductImages() {
+  document.querySelectorAll(".product-img").forEach(img => {
+    img.addEventListener("error", function () {
+      if (this.dataset.fallbackApplied === "1") return;
+      this.dataset.fallbackApplied = "1";
+      this.src = fallbackImageData(this.alt || "Produto");
+    });
+    // Clique/toque na imagem abre o visualizador
+    if (!img.dataset.lightboxBound) {
+      img.dataset.lightboxBound = "1";
+      img.addEventListener("click", function () {
+        openLightbox(this.currentSrc || this.src, this.alt, this.dataset.price || "");
+      });
+    }
+  });
+}
+
+function render(searchTerm = "") {
+  const nav = document.getElementById("categoryNav");
+  const catalog = document.getElementById("catalog");
+  const status = document.getElementById("searchStatus");
+  const query = normalizeText(searchTerm);
+
+  nav.innerHTML = CONFIG.categories.map(cat =>
+    `<a class="category-pill" href="#${cat.id}">${escapeHtml(cat.name)}</a>`
+  ).join("");
+
+  let totalVisible = 0;
+
+  catalog.innerHTML = CONFIG.categories.map(cat => {
+    const products = cat.products.filter(product =>
+      !query || normalizeText(product.name).includes(query)
+    );
+
+    totalVisible += products.length;
+
+    if (products.length === 0) return "";
+
+    return `
+      <section class="category" id="${cat.id}">
+        <div class="category-title">
+          <h2>${escapeHtml(cat.name)}</h2>
+          <span class="category-count">${products.length} ${products.length === 1 ? "item" : "itens"}</span>
+        </div>
+        <div class="grid">
+          ${products.map(product => `
+            <article class="product">
+              <img class="product-img" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" data-price="${escapeHtml(product.price)}" loading="lazy">
+              <div class="product-info">
+                <div class="product-name">${escapeHtml(product.name)}</div>
+                <div class="price">${escapeHtml(product.price)}</div>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+    `;
+  }).join("");
+
+  if (totalVisible === 0) {
+    catalog.innerHTML = `<div class="empty-state">Nenhum produto encontrado para “${escapeHtml(searchTerm)}”.</div>`;
+  }
+
+  protectProductImages();
+
+  const totalProducts = getProducts().length;
+  status.textContent = query
+    ? `${totalVisible} ${totalVisible === 1 ? "produto encontrado" : "produtos encontrados"} de ${totalProducts}.`
+    : `${totalProducts} produtos no catálogo.`;
+
+  const url = whatsappUrl();
+  document.getElementById("topWhatsapp").href = url;
+  document.getElementById("footerWhatsapp").href = url;
+}
+
+const searchInput = document.getElementById("productSearch");
+searchInput.addEventListener("input", event => {
+  render(event.target.value);
+});
+
+/* Lightbox */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxName = document.getElementById("lightboxName");
+const lightboxPrice = document.getElementById("lightboxPrice");
+const lightboxWhatsapp = document.getElementById("lightboxWhatsapp");
+const lightboxShare = document.getElementById("lightboxShare");
+const lightboxClose = document.getElementById("lightboxClose");
+let scrollY = 0;
+let currentLightboxProduct = { name: "", price: "" };
+
+function openLightbox(src, alt, price) {
+  scrollY = window.scrollY || window.pageYOffset;
+  currentLightboxProduct = { name: alt || "Produto", price: price || "" };
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "Produto";
+  lightboxName.textContent = currentLightboxProduct.name;
+  lightboxPrice.textContent = currentLightboxProduct.price;
+  lightbox.classList.add("is-open");
+  document.body.classList.add("lightbox-open");
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+}
+
+function closeLightbox() {
+  if (!lightbox.classList.contains("is-open")) return;
+  lightbox.classList.remove("is-open");
+  document.body.classList.remove("lightbox-open");
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  window.scrollTo(0, scrollY);
+  lightboxImg.removeAttribute("src");
+  lightboxImg.alt = "";
+  lightboxName.textContent = "";
+  lightboxPrice.textContent = "";
+  currentLightboxProduct = { name: "", price: "" };
+}
+
+lightboxClose.addEventListener("click", function (e) {
+  e.stopPropagation();
+  closeLightbox();
+});
+
+async function shareLightboxProduct() {
+  if (!currentLightboxProduct.name) return;
+  const text = `${currentLightboxProduct.name}\nPreço: ${currentLightboxProduct.price}`;
+  const imageUrl = lightboxImg.currentSrc || lightboxImg.src;
+  try {
+    const response = await fetch(imageUrl, { mode: "cors", cache: "no-cache" });
+    if (!response.ok) throw new Error("Falha ao baixar imagem");
+    const blob = await response.blob();
+    const file = new File([blob], "produto.jpg", { type: blob.type || "image/jpeg" });
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ title: currentLightboxProduct.name, text, files: [file] });
+      return;
+    }
+    if (navigator.share) { await navigator.share({ title: currentLightboxProduct.name, text: `${text}\n${imageUrl}` }); return; }
+  } catch(e) { if (e && e.name === "AbortError") return; }
+  window.prompt("Copie o link para compartilhar o produto:", `${text}\n${imageUrl}`);
+}
+
+lightboxShare.addEventListener("click", function(e){ e.stopPropagation(); shareLightboxProduct(); });
+
+lightboxWhatsapp.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (!currentLightboxProduct.name) return;
+  const message = `Quero encomendar esse produto:\n${currentLightboxProduct.name}\nPreço: ${currentLightboxProduct.price}`;
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+});
+
+lightbox.addEventListener("click", function (e) {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" || e.key === "Esc") {
+    closeLightbox();
+  }
+});
+
+/* Impede gesto de pinça / zoom no lightbox */
+lightbox.addEventListener("touchmove", function (e) {
+  if (e.touches.length > 1) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+document.addEventListener("gesturestart", function (e) {
+  if (lightbox.classList.contains("is-open")) {
+    e.preventDefault();
+  }
+});
+
+render();
+</script>
+</body>
+</html>
