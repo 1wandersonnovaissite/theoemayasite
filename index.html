@@ -79,10 +79,8 @@ h1{
 
 /* Categories pills */
 .categories{
-  display:flex;gap:8px;overflow-x:auto;padding:4px 0 22px;
-  scrollbar-width:none;
+  display:flex;flex-wrap:wrap;gap:8px;padding:4px 0 22px;
 }
-.categories::-webkit-scrollbar{display:none}
 .category-pill{
   flex:0 0 auto;border:1px solid var(--line);background:#fff;
   box-shadow:0 1px 4px rgba(0,0,0,.03);
@@ -455,12 +453,43 @@ const CONFIG = {
         { name: "Tapete de porta Bem Vindo antiderrapante", price: "R$45,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_23-16-00-437.png?updatedAt=1788376511639" },
         { name: "Manta Brilha no escuro", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_23-13-17-684.jpg?updatedAt=1788376512084" },
         { name: "Panela Hotel Grande craqueada", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_23-12-28-004.jpg?updatedAt=1788376510640" },
-        { name: "Varal de chão dobrável", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-38-57-086.jpg?updatedAt=1788376510562" },
+        { name: "Varal de chão dobrável", price: "R$270,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-01_22-38-57-086.jpg?updatedAt=1788376510562" },
         { name: "Rede trançada Reforçada", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-08-28-136.jpg?updatedAt=1788376511420" },
         { name: "Rede Reforçada premium Bucho de boi", price: "R$380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-09-21-867.jpg?updatedAt=1788376511319" },
         { name: "Capa para sofá de malha 2 peças 3 e 2 Lugares", price: "R$310,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-10-40-260.jpg?updatedAt=1788376511302" },
         { name: "Jogo de chaves catracas e soquetes 40 peças na maleta", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-11-18-686.jpg?updatedAt=1788376511524" },
         { name: "Caixa organizadora telada grande 40 Litros", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-02_16-12-06-667.jpg?updatedAt=1788376511198" },
+        { name: "Toalha de mesa térmica 6 cadeiras", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_00-55-07-267.jpg" },
+        { name: "Aparelho de jantar porcelana decorado fratelli", price: "R$510,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-27-03-418.jpg" },
+        { name: "Jogo de panelas Alumínio batido grandes 3 peças 24,26 e 28cm", price: "R$580,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-26-00-649.jpg" },
+        { name: "Jogo de panelas Alumínio batido polido 4 peças", price: "R$450,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-25-18-228.jpg" },
+        { name: "Jogo de panelas Alumínio batido polido 5 peças", price: "R$580,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-16-04-096.jpg" },
+        { name: "Tacho Alumínio batido polido 20 Litros", price: "R$480,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-12-41-840.jpg" },
+        { name: "Lixeira inox grande com pedal 12 Litros", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-08-15-897.jpg" },
+        { name: "Jogo de saladeiras inox 5 peças com tampa", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_18-06-22-468.jpg" },
+        { name: "Jarra Crystal 1.5 Litros coqueiro alto relevo", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-51-35-460.jpg" },
+        { name: "Jogo de jarra crystal Deli diamante com 6 copos", price: "R$260,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-49-51-044.jpg" },
+        { name: "Jarra de vidro 1.2 litros com 6 copos 300ml", price: "R$240,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-48-35-844.jpg" },
+        { name: "Cadeira infantil com apito", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-46-59-191.jpg" },
+        { name: "Guarda chuva retrátil 120cm", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-45-29-837.jpg" },
+        { name: "Alicate dobrável Multiuso", price: "R$70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-44-07-680.jpg" },
+        { name: "Cesto telado 72 Litros", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_17-40-30-746.jpg" },
+        { name: "Jogo de panelas Alumínio usinadas polida Tampa de vidro Rosa", price: "R$690,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_16-54-37-280.jpg" },
+        { name: "Garrafa térmica Stanley Vacuum 2 Litros", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_16-51-55-925.jpg" },
+        { name: "Jogo de panelas Alumínio usinadas polida Tampa de vidro Vermelha", price: "R$690,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_16-43-51-930.jpg" },
+        { name: "Kit de churrasco 3 peças Faca Garfo e pegador", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_16-32-59-734.jpg" },
+        { name: "Garrafa térmica inox Berlim 1 Litro", price: "R$180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-42-16-367.jpg" },
+        { name: "Garrafa térmica Siena 1 litro", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-40-11-963.jpg" },
+        { name: "Garrafa térmica 5 litros com torneira", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-39-23-595.jpg" },
+        { name: "Copo térmico Stanley Coffee 460ml", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-34-06-534.jpg" },
+        { name: "Escorredor de louças inox Niquelart", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-32-51-784.jpg" },
+        { name: "Jogo de sobremesas de vidro 7 peças", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-31-46-342.jpg" },
+        { name: "Kit de facas 8 peças com suporte giratório", price: "R$295,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-30-45-769.jpg" },
+        { name: "Jogo de jarra com 6 copos coqueiros Alto relevo", price: "R$420,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-28-50-705.jpg" },
+        { name: "Centro de Mesa Crystal 14.5cm", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-02-29-406.jpg" },
+        { name: "Frigideira Antiaderente 24cm com tampa de vidro", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-01-48-389.jpg" },
+        { name: "Cuscuzeira reforçada colorida", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_14-00-34-242.jpg" },
+        { name: "Jogo de xicaras de porcelana decoradas", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-03_00-58-41-325.jpg" },
       ]
     },
     {
