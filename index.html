@@ -58,7 +58,7 @@ header{
 .whatsapp svg{width:22px;height:22px;flex-shrink:0}
 
 /* Hero */
-.hero{padding:28px 0 18px}
+.hero{padding:8px 0 12px}
 .hero-box{
   min-height:220px;border:1px solid rgba(0,0,0,.08);
   border-radius:22px;padding:32px 22px;
@@ -75,7 +75,16 @@ h1{
   line-height:1.1;letter-spacing:-1.2px;
   max-width:700px;margin:10px 0 12px;color:#111;font-weight:800;
 }
-.hero-copy{color:#333;max-width:560px;font-size:15px;font-weight:500}
+.hero-copy{
+  color:#111;max-width:920px;font-size:clamp(18px,4.8vw,30px);
+  line-height:1.18;font-weight:900;letter-spacing:-.5px;
+}
+.hero-whatsapp{position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  width:190px;height:58px;padding:0;font-size:16px;font-weight:800;
+  gap:9px;box-shadow:0 3px 10px rgba(0,0,0,.12);
+}
+.hero-whatsapp svg{width:28px;height:28px}
+
 
 /* Categories pills */
 .categories{
@@ -120,7 +129,7 @@ h1{
 
 /* Product grid */
 .grid{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
 }
 .product{
   background:var(--card);border:1px solid var(--line);
@@ -162,7 +171,8 @@ footer{
 
 @media(min-width:650px){
   .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-  .hero-box{padding:40px}
+  .hero-box{min-height:0;height:104px;padding:10px 220px 10px 40px}
+  .hero-whatsapp{right:28px}
 }
 @media(min-width:980px){
   .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -280,6 +290,10 @@ body.lightbox-open{
   overflow:hidden;
 }
 @media(max-width:650px){
+  .hero{padding:2px 0 8px}
+  .hero-box{min-height:0;height:104px;padding:10px 200px 10px 18px;border-radius:18px}
+  .hero-copy{font-size:clamp(17px,5vw,22px);font-weight:900}
+  .hero-whatsapp{right:12px;width:172px;height:50px;font-size:14px}
   .lightbox{padding:12px}
   .lightbox-content{gap:8px;max-height:94vh}
   .lightbox-img{max-height:68vh;max-width:94vw}
@@ -302,19 +316,17 @@ body.lightbox-open{
         <div class="brand-sub">Catálogo digital</div>
       </div>
     </a>
-    <a class="whatsapp" id="topWhatsapp" href="#" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
   </div>
 </header>
 
 <main class="container">
   <section class="hero">
     <div class="hero-box">
-      <div class="kicker">CATÁLOGO ONLINE</div>
-      <h1>Escolha seus produtos<br>e fale conosco.</h1>
-      <p class="hero-copy">Para comprar ou tirar dúvidas, fale diretamente pelo WhatsApp.</p>
+      <p class="hero-copy">Para comprar ou tirar dúvidas,<br>fale diretamente pelo WhatsApp.</p>
+      <a class="whatsapp hero-whatsapp" id="topWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </section>
 
@@ -566,6 +578,51 @@ const CONFIG = {
         { name: "Jogo de panelas de indução 5 peças com tampa de vidro", price: "R$790,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-07_09-40-58-328.jpg?updatedAt=1788882411153" },
         { name: "Cobertor casal queen toque de seda", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-06_23-25-05-710.jpg?updatedAt=1788882411412" },
         { name: "Cobreleito dupla face King cortex liso com porta travesseiros", price: "R$340,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-08_12-43-18-917.jpg?updatedAt=1788882411345" },
+         { name: "Jogo de taças Barone Nadir 490ml 6 peças", price: "R$180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-19-27-358.jpg" },
+        { name: "Jogo de taças paulista Nadir 6 peças", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-18-18-843.jpg" },
+        { name: "Jogo de chaves combinada 12 peças", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-17-12-027.jpg" },
+        { name: "Copo térmico Stanley Rosa 1200ml", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-15-11-837.jpg?updatedAt=1789005609003" },
+        { name: "Sapateira de Madeira Reforçada", price: "R$320,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-14-20-570.jpg?updatedAt=1789005609922d" },
+        { name: "Jogo de xícaras de vidro classic 6 peças", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-13-21-266.jpg?updatedAt=1789005609566" },
+        { name: "MOP Giratório 8 litros com cesto inox", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-12-30-934.jpg?updatedAt=1789005609330" },
+        { name: "Colchão inflável King", price: "R$530,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-11-59-594.jpg?updatedAt=1789005610512" },
+        { name: "Jogo de potes Aquamar 5 peças", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_16-11-33-153.jpg?updatedAt=1789005608940" },
+        { name: "Jogo de potes Herméticos 5 peças", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_15-51-53-981.jpg?updatedAt=1789005610103" },
+        { name: "Jogo de pratos  diamante Duralex 6 peças", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_15-47-25-754.jpg?updatedAt=1789005609818" },
+        { name: "Fatiador de legumes 16 peças", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_15-44-28-559.jpg?updatedAt=1789005609579" },
+        { name: "Jogo de taças Cappuccino Lavanda 190ml 6 peças", price: "R$180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_15-42-44-912.jpg?updatedAt=1789005610485" },
+        { name: "Jogo de xícaras de porcelana com pires 220ml  6 peças", price: "R$240,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_15-39-53-501.jpg?updatedAt=1789005608850" },
+        { name: "Frigideira antiaderente de indução 28cm Stone induction", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_14-58-03-584.jpg?updatedAt=1789005610518" },
+        { name: "Barraca de camping automática para 4 pessoas", price: "R$550,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_14-40-19-604.jpg?updatedAt=1789005609787" },
+        { name: "Protetor de sofá tecido suede", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_14-37-07-872.jpg?updatedAt=1789005610120" },
+        { name: "Manta casal poá com sherpa", price: "R$270,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_14-34-06-209.jpg?updatedAt=1789005609943" },
+        { name: "Coberdrom gigante Queen poá com sherpa", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-47-07-466.jpg?updatedAt=1789005610522" },
+        { name: "Jogo de taças Crystal âmbar 6 peças", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-45-10-524.jpg?updatedAt=1789005609941" },
+        { name: "Jogo de potes herméticos 3 peças com cesto escorredor", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-40-35-337.jpg?updatedAt=1789005609322" },
+        { name: "Jogo de passadeiras antiderrapante 3 peças", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-38-50-847.jpg?updatedAt=1789005609736" },
+        { name: "Passadeira Roma aveludada antiderrapante 117x45cm", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-36-45-380.jpg?updatedAt=1789005609592" },
+        { name: "Jogo de xícaras Atenas 240ml  6 peças", price: "R$100,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-34-04-369.jpg?updatedAt=1789005609995" },
+        { name: "Aparador Belíssima Off-White com 2 Gavetas", price: "R$950,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-31-31-982.jpg?updatedAt=1789005609461" },
+        { name: "Jogo de taças Crystal Diamante 260ml  6 peças", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-30-16-422.jpg?updatedAt=1789005609973" },
+        { name: "Conjunto de furadeiras e brocas 100 peças  na maleta", price: "R$460,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-27-27-331.jpg?updatedAt=1789005609528" },
+        { name: "Panela de pressão de 10 litros polida", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-26-08-758.jpg?updatedAt=1789005608887" },
+        { name: "Jogo de saladeiras inox 5 peças redondas com tampa", price: "R$85,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-25-35-394.jpg?updatedAt=1789005608804" },
+        { name: "Tábua de passar roupas", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-22-54-543.jpg?updatedAt=1789005609280" },
+        { name: "Jogo de chaves de fenda e philips 8 peças", price: "R$95,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-21-05-708.jpg?updatedAt=1789005609811" },
+        { name: "Capa para colchão de malha casal com zíper", price: "R$110,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-19-01-043.jpg?updatedAt=1789005609674" },
+        { name: "Capa para colchão de malha solteiro com zíper", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-18-00-338.jpg?updatedAt=1789005609627" },
+        { name: "Garrafa térmica infantil 550ml Huma-18", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-16-23-174.jpg?updatedAt=1789005609785" },
+        { name: "Panela Frigideira Wok antiaderente com tampa de vidro 2 Alças", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-15-50-619.jpg?updatedAt=1789005609340" },
+        { name: "Frigideira wok antiaderente com tampa de vidro", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-13-05-493.jpg?updatedAt=1789005609355" },
+        { name: "Churrasqueira Bafo craqueada", price: "R$495,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-08-36-634.jpg?updatedAt=1789005609204" },
+        { name: "Kit de passadeiras Montreal 3 peças", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-05-55-317.jpg?updatedAt=1789005609899" },
+        { name: "Kit passadeira rústica com 2 tapetes", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-05-18-570.jpg?updatedAt=1789005610097" },
+        { name: "Garrafa térmica Stanley infantil 520ml bico duplo", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-03-53-627.jpg?updatedAt=1789005609159" },
+        { name: "Cesto de roupas redondo de Bambu", price: "R$240,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-02-41-257.jpg?updatedAt=1789005609884" },
+        { name: "Toalha de mesa de renda 6 cadeiras", price: "R$110,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_11-02-13-188.jpg?updatedAt=1789005610070" },
+        { name: "Manta de bebê com naninha pelúcia coelinho", price: "R$180,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_10-58-33-040.jpg?updatedAt=1789005609934" },
+        { name: "Lençol de malha casal ponto palito com porta travesseiros", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_09-54-23-062.jpg?updatedAt=1789005606100" },
+        { name: "Jogo de copos de vidro 6 peças porto fino 330ml", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-09_09-52-01-206.jpg?updatedAt=1789005610183" },
       ]
     },
     {
