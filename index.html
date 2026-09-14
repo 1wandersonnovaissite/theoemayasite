@@ -129,7 +129,7 @@ h1{
 
 /* Product grid */
 .grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
 }
 .product{
   background:var(--card);border:1px solid var(--line);
@@ -170,7 +170,7 @@ footer{
 .footer-whatsapp{margin-left:auto}
 
 @media(min-width:650px){
-  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
   .hero-box{min-height:0;height:104px;padding:10px 220px 10px 40px}
   .hero-whatsapp{right:28px}
 }
@@ -633,6 +633,29 @@ const CONFIG = {
         { name: "Garrafa verona de pressão inox 1 litro", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-00-41-591.jpg" },
         { name: "Jogo de passadeiras 3 peças IDEE HOME antiderrapante", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-00-10-124.jpg" },
         { name: "Jogo de cumbucas coloridas com alça 6 peças", price: "R$95,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-47-13-212.jpg" },
+        { name: "Cesto Bambu quadrado com tampa", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-46-05-735.jpg" },
+        { name: "Garrafa térmica luxo 1 litro", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-44-57-770.jpg" },
+        { name: "Rede indiana reforçada", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-33-40-776.jpg" },
+        { name: "Jogo de potes Herméticos silicone 4 peças", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-33-02-900.jpg" },
+        { name: "Jogo de cama casal bordado 4 peças", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-32-22-426.jpg" },
+        { name: "Jogo de lençol casal bordado 3 peças", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-31-42-802.jpg?updatedAt=1789342275390" },
+        { name: "Lençol de malha solteiro com porta travesseiro", price: "R$100,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-30-52-411.jpg?updatedAt=1789342281685" },
+        { name: "Tapete de porta tramado 40x60cm", price: "R$45,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-30-14-042.jpg?updatedAt=1789342283343" },
+        { name: "Jogo de jarra Palm com 6 taças coqueiro verde alto relevo", price: "R$380,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_13-19-26-189.jpg?updatedAt=1789342282014" },
+        { name: "Cômoda Quero Quero 4 Gavetas e 1 Porta", price: "R$1300,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_13-18-40-525.jpg?updatedAt=1789342267490" },
+        { name: "Garrafa térmica turim unitermi 5 litros", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_13-18-04-454.jpg?updatedAt=1789342274657" },
+        { name: "Garrafa térmica vercelli unitermi", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_13-17-24-212.jpg?updatedAt=1789342272803" },
+        { name: "Banqueta preta com compartimento", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-53-17-897.jpg?updatedAt=1789342272597" },
+        { name: "Jogo de copos de chopp 195ml 6 peças", price: "R$110,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-49-45-228.jpg?updatedAt=1789342281702" },
+        { name: "Jogo de canecas decoradas 6 peças", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-48-12-330.jpg?updatedAt=1789342267690" },
+        { name: "Jogo de copos fervedor de leite alumínio polido 3 peças", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-47-13-072.jpg?updatedAt=1789342265705" },
+        { name: "Jogo de mantimentos de rosca colorido estampados", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-46-39-776.jpg?updatedAt=1789342281570" },
+        { name: "Garrafa térmica com torneira 10 Litros", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-46-08-379.jpg?updatedAt=1789342262750" },
+        { name: "Chapa bifeteira antiaderente de alumínio fundido", price: "R$240,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-45-40-124.jpg?updatedAt=1789342283000" },
+        { name: "Jogo de mantimentos de alumínio polido Grandes decorados 5 peças", price: "R$270,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-45-13-549.jpg?updatedAt=1789342281671" },
+        { name: "Aparelho de jantar porcelana decorado Recanto 20 peças", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-45-29-041.jpg?updatedAt=1789341963807" },
+        { name: "Colcha casal Queen Borboleta com bordado", price: "R$260,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-43-29-721.jpg?updatedAt=1789341965357" },
+        { name: "Toalha de banho adulto Austrália 80cmx1,50m", price: "R$70,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-42-53-127.jpg?updatedAt=1789341965934" },
 ]
     },
     {
@@ -660,6 +683,13 @@ const CONFIG = {
         { name: "Rádio portátil Retrô Grande", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-54-53-805.jpg" },
         { name: "Secador de cabelos Agratto 1900w", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-53-53-721.jpg" },
         { name: "Lâmpada de emergência 48w H3742", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-52-15-082.jpg" },
+        { name: "Babyliss Cacheador Philco Bivolt", price: "R$360,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-41-12-835.jpg?updatedAt=1789342095258" },
+        { name: "Babyliss Cacheador mondial Bivolt", price: "R$360,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-13_00-00-31-984.jpg?updatedAt=1789341959707" },
+        { name: "Lavadora de pressão 1600w Lavor com acessórios", price: "R$950,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-39-57-222.jpg?updatedAt=1789342094762" },
+        { name: "Caixa de som amplificada Aquário Hype 480w", price: "R$1300,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-38-15-494.jpg?updatedAt=1789342107484" },
+        { name: "Câmera de segurança smart com 3 Lentes KA-S095", price: "R$560,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-37-04-872.jpg?updatedAt=1789342105169" },
+        { name: "Fone de ouvido Bluetooth JBL  tune 760", price: "R$150,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-36-24-206.jpg?updatedAt=1789342104926" },
+        { name: "Ventilador de mesa turbo silencioso 40cm", price: "R$450,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-35-46-987.jpg?updatedAt=1789342108444" },
 ]
     },
     {
@@ -702,6 +732,11 @@ const CONFIG = {
         { name: "Perfume masculino Blue ocean Brand G-070", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-08-56-480.jpg" },
         { name: "Perfume Feminino night dream Brand G-069", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-07-22-670.jpg" },
         { name: "Loção hidratante corporal Victoria's secrets Premium", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-06-10-830.jpg" },
+        { name: "Maquiagem itens variados unidade", price: "R$25,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-54-11-810.jpg?updatedAt=1789342282078" },
+        { name: "Kit capilar Cresce Mais cachos Glammour", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-44-45-956.jpg?updatedAt=1789341962669" },
+        { name: "Kit capilar Mais Liso Botox Glammour", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-44-12-154.jpg?updatedAt=1789341959349" },
+        { name: "Batom Duplo liquido com gloss Ruby Rose", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-41-51-372.jpg?updatedAt=1789342055462" },
+        { name: "Body Splash Victoria's secrets", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-39-15-734.jpg?updatedAt=1789342107989" },
 ]
     },
     {
@@ -761,6 +796,7 @@ const CONFIG = {
         { name: "Bermuda masculina de praia tectel", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-04-28-067.jpg" },
         { name: "Moletom masculino 3 cabos com capuz", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_15-03-19-169.jpg" },
         { name: "Moletom masculino com zíper e capuz", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-58-56-678.jpg" },
+        { name: "Calça Masculina Sarja Brim Cores variadas", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-34-54-887.jpg?updatedAt=1789342104631" },
 ]
     },
     {
@@ -902,6 +938,10 @@ const CONFIG = {
         { name: "Kit com 2 Bolsas feminina com corrente", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_20-18-50-529.jpg" },
         { name: "Mochila de couro feminina com bolsinha", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-47-47-036.jpg" },
         { name: "Mochila reforçada impermeável com entrada USB", price: "R$220,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-46-38-945.jpg" },
+        { name: "Mochila de couro reforçada", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-45-34-257.jpg" },
+        { name: "Mala de viagem com trava de senha", price: "R$550,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-44-23-381.jpg" },
+        { name: "Bolsa Feminina luxo Fashion", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_14-43-35-661.jpg" },
+        { name: "Bolsa térmica dupla grande", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-10_11-52-00-435.jpg?updatedAt=1789342282364" },
       ]
     }
   ]
