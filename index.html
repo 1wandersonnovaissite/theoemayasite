@@ -303,7 +303,271 @@ body.lightbox-open{
   .lightbox-whatsapp{width:46px;height:46px;margin-top:8px}
   .lightbox-whatsapp svg{width:25px;height:25px}
 }
+
+
+/* ===== Visual 3D pastel inspirado na referência ===== */
+:root{
+  --black:#30264f;
+  --gold:#9272d8;
+  --gold-light:#7957c5;
+  --white:#ffffff;
+  --gray:#716b83;
+  --bg:#f3effb;
+  --card:#fffaff;
+  --line:#e5d9f3;
+}
+body{
+  background:linear-gradient(135deg,#f4efff 0%,#fff3f5 52%,#f0f5ff 100%);
+  color:#30264f;
+}
+header{
+  background:rgba(255,250,255,.91);
+  border-bottom:1px solid rgba(143,113,198,.22);
+  box-shadow:0 5px 18px rgba(67,45,107,.08);
+}
+.brand-name,.hero-copy,h1,.kicker,.category h2,.product-name,.price,.footer-title{color:#30264f}
+.brand-sub,.search-status,.footer-copy{color:#777087}
+.logo{border-radius:15px;box-shadow:0 4px 12px rgba(70,45,120,.15)}
+.hero-box{
+  background:linear-gradient(135deg,#d9c8fb 0%,#efc9e8 52%,#d7dafa 100%);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 22px rgba(88,61,139,.20),inset 0 2px 5px rgba(255,255,255,.8),inset 0 -4px 8px rgba(95,65,146,.10);
+}
+.hero-copy{ text-shadow:0 1px 0 rgba(255,255,255,.7); }
+.whatsapp{
+  box-shadow:0 5px 0 #159d49,0 8px 15px rgba(36,170,91,.22);
+}
+.whatsapp:active{transform:translateY(3px);box-shadow:0 2px 0 #159d49,0 4px 9px rgba(36,170,91,.18)}
+.category-pill{
+  background:linear-gradient(145deg,#fffaff,#f0e8fc);
+  border:1px solid #e4d7f5;
+  color:#554477;
+  box-shadow:5px 5px 11px rgba(94,68,139,.12),-4px -4px 10px rgba(255,255,255,.95),inset 0 1px 0 #fff;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.category-pill:hover{border-color:#b99ce9;color:#6b4bb2;transform:translateY(-2px);box-shadow:6px 8px 14px rgba(94,68,139,.17),-3px -3px 8px #fff}
+.search-input{
+  background:linear-gradient(145deg,#fff,#f8f3ff);
+  border:1px solid #e3d8f1;
+  color:#30264f;
+  box-shadow:inset 3px 3px 7px rgba(100,75,140,.08),inset -3px -3px 7px rgba(255,255,255,.95),0 4px 10px rgba(85,59,130,.07);
+}
+.search-input:focus{border-color:#aa8cdd;box-shadow:0 0 0 3px rgba(160,126,218,.16),inset 2px 2px 5px rgba(100,75,140,.06)}
+.category-title:before{background:linear-gradient(180deg,#c19aef,#ed9ec6);box-shadow:0 2px 5px rgba(128,84,177,.25)}
+.product{
+  background:linear-gradient(145deg,#fffaff,#f8f1ff);
+  border:1px solid rgba(255,255,255,.95);
+  border-radius:18px;
+  box-shadow:7px 8px 17px rgba(82,58,126,.13),-5px -5px 13px rgba(255,255,255,.95),inset 0 1px 0 rgba(255,255,255,.95);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.product:hover{
+  transform:translateY(-4px);
+  box-shadow:9px 12px 22px rgba(82,58,126,.19),-4px -4px 12px rgba(255,255,255,.95);
+}
+.product-info{background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(247,239,255,.96))}
+.product:nth-child(4n+2) .product-info{background:linear-gradient(135deg,#fff7f8,#ffedf1)}
+.product:nth-child(4n+3) .product-info{background:linear-gradient(135deg,#fffaf0,#fff2d9)}
+.product:nth-child(4n+4) .product-info{background:linear-gradient(135deg,#f5f8ff,#eaf1ff)}
+.price{color:#7754bd}
+.empty-state{background:rgba(255,255,255,.7);border-color:#d9c9ef;border-radius:18px}
+footer{
+  background:linear-gradient(135deg,#eee5fc,#fff0f4);
+  border-top:1px solid #e4d7f5;
+  box-shadow:0 -5px 18px rgba(83,58,128,.06);
+}
+.lightbox-info{background:linear-gradient(145deg,#fffaff,#f4eaff);box-shadow:0 8px 24px rgba(0,0,0,.28),inset 0 1px 0 #fff}
+.lightbox-name,.lightbox-price{color:#30264f}
+.lightbox-share{background:linear-gradient(145deg,#fff,#f0e8fc);color:#654a9b;box-shadow:4px 5px 10px rgba(65,45,105,.18),-3px -3px 8px rgba(255,255,255,.85)}
+@media(max-width:650px){
+  .product{border-radius:14px;box-shadow:4px 5px 11px rgba(82,58,126,.13),-3px -3px 8px rgba(255,255,255,.95)}
+  .product:hover{transform:none}
+  .hero-box{box-shadow:0 7px 16px rgba(88,61,139,.18),inset 0 2px 4px rgba(255,255,255,.8)}
+}
+@media(prefers-reduced-motion:reduce){
+  .product,.category-pill,.whatsapp{transition:none}
+}
+
+
+/* ===== Paleta inspirada na nova referência: lavanda, roxo, amarelo e marinho ===== */
+:root{
+  --black:#17172f;
+  --gold:#5b35cf;
+  --gold-light:#4522b8;
+  --white:#ffffff;
+  --gray:#65657a;
+  --bg:#f3f1ff;
+  --card:#ffffff;
+  --line:#e5e1f4;
+}
+body{
+  background:linear-gradient(180deg,#f1efff 0%,#faf9ff 48%,#f4f2ff 100%);
+  color:#17172f;
+}
+header{
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #e7e3f6;
+  box-shadow:0 4px 16px rgba(31,25,76,.07);
+}
+.brand-name,.hero-copy,h1,.kicker,.category h2,.product-name,.price,.footer-title{
+  color:#17172f;
+}
+.brand-sub,.search-status,.footer-copy{color:#66657c}
+.hero-box{
+  background:linear-gradient(115deg,#f0edff 0%,#e9e4ff 58%,#f7f4ff 100%);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:0 10px 24px rgba(51,35,116,.12),inset 0 2px 5px rgba(255,255,255,.95),inset 0 -3px 8px rgba(80,54,160,.07);
+}
+.hero-copy{text-shadow:0 1px 0 rgba(255,255,255,.85)}
+.whatsapp{
+  background:linear-gradient(145deg,#6845df,#4d2bbd);
+  color:#fff;
+  box-shadow:0 5px 0 #38208e,0 8px 16px rgba(73,43,178,.22);
+}
+.whatsapp:hover{background:linear-gradient(145deg,#7554e8,#5631c8)}
+.whatsapp:active{transform:translateY(3px);box-shadow:0 2px 0 #38208e,0 4px 9px rgba(73,43,178,.18)}
+.category-pill{
+  background:linear-gradient(145deg,#fff,#f0edff);
+  border:1px solid #e2dcf6;
+  color:#30265e;
+  box-shadow:5px 5px 11px rgba(58,43,117,.10),-4px -4px 10px rgba(255,255,255,.98),inset 0 1px 0 #fff;
+}
+.category-pill:hover{border-color:#9e87ec;color:#4c2bbd}
+.search-input{
+  background:linear-gradient(145deg,#fff,#f8f6ff);
+  border:1px solid #e2def3;
+  color:#17172f;
+  box-shadow:inset 3px 3px 7px rgba(62,48,120,.06),inset -3px -3px 7px rgba(255,255,255,.98),0 4px 10px rgba(55,40,115,.06);
+}
+.search-input:focus{border-color:#8d72e5;box-shadow:0 0 0 3px rgba(112,77,213,.14),inset 2px 2px 5px rgba(62,48,120,.05)}
+.category-title:before{background:linear-gradient(180deg,#6845df,#f0c900);box-shadow:0 2px 5px rgba(91,53,207,.22)}
+.product{
+  background:linear-gradient(145deg,#fff,#fbfaff);
+  border:1px solid rgba(255,255,255,.98);
+  border-radius:18px;
+  box-shadow:7px 8px 17px rgba(48,37,105,.11),-5px -5px 13px rgba(255,255,255,.98),inset 0 1px 0 rgba(255,255,255,.98);
+}
+.product:hover{box-shadow:9px 12px 22px rgba(48,37,105,.17),-4px -4px 12px rgba(255,255,255,.98)}
+.product-info{background:linear-gradient(135deg,#fff,#f8f6ff)}
+.product:nth-child(4n+2) .product-info{background:linear-gradient(135deg,#fff,#f7f1f4)}
+.product:nth-child(4n+3) .product-info{background:linear-gradient(135deg,#fffdf2,#fff8d9)}
+.product:nth-child(4n+4) .product-info{background:linear-gradient(135deg,#f8f9ff,#eef1ff)}
+.price{color:#5631c8}
+.empty-state{background:rgba(255,255,255,.78);border-color:#dcd5f2}
+footer{
+  background:linear-gradient(135deg,#17172f,#202044);
+  border-top:1px solid #302e5a;
+  box-shadow:0 -5px 18px rgba(31,25,76,.10);
+  color:#fff;
+}
+footer .footer-title,footer .footer-copy{color:#fff}
+.lightbox-info{background:linear-gradient(145deg,#fff,#f4f0ff);box-shadow:0 8px 24px rgba(0,0,0,.28),inset 0 1px 0 #fff}
+.lightbox-name,.lightbox-price{color:#17172f}
+.lightbox-price{color:#5631c8}
+.lightbox-share{background:linear-gradient(145deg,#fff,#f0edff);color:#5631c8;box-shadow:4px 5px 10px rgba(45,34,100,.16),-3px -3px 8px rgba(255,255,255,.9)}
+.lightbox-whatsapp{background:linear-gradient(145deg,#6845df,#4d2bbd)}
+.lightbox-whatsapp:hover{background:#4522b8}
+@media(max-width:650px){
+  .product{box-shadow:4px 5px 11px rgba(48,37,105,.11),-3px -3px 8px rgba(255,255,255,.98)}
+  .hero-box{box-shadow:0 7px 16px rgba(51,35,116,.12),inset 0 2px 4px rgba(255,255,255,.95)}
+}
+
 </style>
+
+<style>
+/* ===== Paleta final: branco e preto; relevo somente em categorias e WhatsApp ===== */
+:root{--black:#111;--gold:#111;--gold-light:#000;--white:#fff;--gray:#555;--bg:#fff;--card:#fff;--line:#ddd}
+body{background:#fff;color:#111}
+header{background:#fff;border-bottom:1px solid #ddd;box-shadow:none}
+.brand-name,.hero-copy,h1,.kicker,.category h2,.product-name,.price,.footer-title,.lightbox-name,.lightbox-price{color:#111}
+.brand-sub,.search-status,.footer-copy{color:#555}
+.hero-box{background:#fff;border:1px solid #ddd;box-shadow:none}
+.hero-copy{text-shadow:none}
+.whatsapp{background:#25d366;color:#fff;box-shadow:0 5px 0 #159d49,0 8px 15px rgba(37,211,102,.22)}
+.whatsapp:hover{background:#1ebe57}
+.whatsapp:active{transform:translateY(3px);box-shadow:0 2px 0 #159d49,0 4px 9px rgba(37,211,102,.18)}
+.category-pill{background:#fff;border:1px solid #111;color:#111;box-shadow:5px 5px 0 #111;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.category-pill:hover{border-color:#000;color:#000;transform:translateY(-2px);box-shadow:6px 7px 0 #111}
+.search-input{background:#fff;border:1px solid #ccc;color:#111;box-shadow:none}
+.search-input:focus{border-color:#111;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+.category-title:before{background:#111;box-shadow:none}
+.product{background:#fff;border:1px solid #ddd;border-radius:14px;box-shadow:none}
+.product:hover{transform:none;box-shadow:none}
+.product-info,.product:nth-child(4n+2) .product-info,.product:nth-child(4n+3) .product-info,.product:nth-child(4n+4) .product-info{background:#fff}
+.price{color:#111}
+.empty-state{background:#fff;border-color:#ccc}
+footer{background:#111;border-top:1px solid #111;box-shadow:none;color:#fff}
+footer .footer-title,footer .footer-copy{color:#fff}
+.lightbox-info{background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.lightbox-share{background:#fff;color:#111;box-shadow:4px 5px 10px rgba(0,0,0,.18)}
+.lightbox-whatsapp{background:#25d366;color:#fff;box-shadow:0 5px 0 #159d49,0 7px 14px rgba(37,211,102,.20)}
+.lightbox-whatsapp:hover{background:#1ebe57}
+.lightbox-close{background:#fff;color:#111}
+@media(max-width:650px){.product{border-radius:14px;box-shadow:none}.hero-box{box-shadow:none}}
+</style>
+
+
+<style>
+/* Menu lateral de categorias: painel retrátil e visual discreto */
+.category-menu-bar{padding:4px 0 18px;display:flex;align-items:center}
+.category-menu-trigger{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:44px;padding:10px 16px;background:#fff;color:#111;
+  border:1px solid #d4d4d4;border-radius:12px;font:600 14px/1.2 inherit;
+  cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.category-menu-trigger svg{width:19px;height:19px;flex:none}
+.category-menu-trigger:focus-visible,.category-drawer-close:focus-visible,.category-drawer-link:focus-visible{
+  outline:3px solid rgba(17,17,17,.18);outline-offset:2px
+}
+.category-menu-count{
+  display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;
+  padding:0 6px;border-radius:999px;background:#f3f3f3;color:#333;font-size:11px;font-weight:700
+}
+.category-drawer-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.34);z-index:1000;
+  opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease
+}
+.category-drawer{
+  position:fixed;top:0;left:0;bottom:0;z-index:1001;width:min( min(340px, 88vw), 340px);
+  background:#fff;color:#111;border-right:1px solid #dedede;
+  transform:translateX(-102%);visibility:hidden;transition:transform .24s ease,visibility .24s ease;
+  display:flex;flex-direction:column;padding:0 16px 18px;overflow:hidden
+}
+.category-drawer.is-open{transform:translateX(0);visibility:visible}
+.category-drawer-backdrop.is-open{opacity:1;visibility:visible}
+.category-drawer-header{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:22px 0 18px;border-bottom:1px solid #e7e7e7;flex:none
+}
+.category-drawer-title{font-size:20px;font-weight:750;letter-spacing:-.3px}
+.category-drawer-subtitle{font-size:12px;color:#777;margin-top:4px}
+.category-drawer-close{
+  width:38px;height:38px;border:1px solid #ddd;border-radius:10px;background:#fff;color:#222;
+  font-size:27px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer
+}
+.category-drawer-list{
+  display:flex;flex-direction:column;gap:8px;overflow-y:auto;padding:16px 2px 24px;
+  overscroll-behavior:contain
+}
+.category-drawer-link{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:46px;padding:12px 14px;background:#fff;color:#111;
+  border:1px solid #d8d8d8;border-radius:10px;font-size:14px;font-weight:500;
+  box-shadow:0 1px 2px rgba(0,0,0,.035);transition:background .15s,border-color .15s
+}
+.category-drawer-link span{font-size:23px;line-height:16px;color:#777}
+.category-drawer-link:hover,.category-drawer-link:active{background:#f8f8f8;border-color:#aaa}
+body.category-drawer-open{overflow:hidden}
+@media(min-width:900px){
+  .category-menu-bar{padding-bottom:18px}
+  .category-drawer{width:340px}
+}
+@media(prefers-reduced-motion:reduce){
+  .category-drawer,.category-drawer-backdrop,.category-drawer-link{transition:none}
+}
+</style>
+
 </head>
 <body>
 
@@ -330,7 +594,25 @@ body.lightbox-open{
     </div>
   </section>
 
-  <nav class="categories" id="categoryNav" aria-label="Categorias"></nav>
+  <div class="category-menu-bar">
+    <button class="category-menu-trigger" id="openCategories" type="button" aria-controls="categoryDrawer" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>Categorias</span>
+      <span class="category-menu-count" id="categoryMenuCount"></span>
+    </button>
+  </div>
+
+  <div class="category-drawer-backdrop" id="categoryBackdrop" aria-hidden="true"></div>
+  <aside class="category-drawer" id="categoryDrawer" aria-label="Menu de categorias" aria-hidden="true">
+    <div class="category-drawer-header">
+      <div>
+        <div class="category-drawer-title">Categorias</div>
+        <div class="category-drawer-subtitle">Escolha uma seção do catálogo</div>
+      </div>
+      <button class="category-drawer-close" id="closeCategories" type="button" aria-label="Fechar categorias">×</button>
+    </div>
+    <nav class="category-drawer-list" id="categoryNav" aria-label="Categorias"></nav>
+  </aside>
 
   <section class="search-area" aria-label="Busca no catálogo">
     <div class="search-box">
@@ -810,7 +1092,35 @@ const CONFIG = {
         { name: "Kit capilar Mais Liso Botox Glammour", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-44-12-154.jpg?updatedAt=1789341959349" },
         { name: "Batom Duplo liquido com gloss Ruby Rose", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-41-51-372.jpg?updatedAt=1789342055462" },
         { name: "Body Splash Victoria's secrets", price: "R$80,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-12_23-39-15-734.jpg?updatedAt=1789342107989" },
-]
+
+        { name: "Kit de Maquiagem portátil infantil", price: "R$140,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-19-42-482.jpg?updatedAt=1790815904004" },
+        { name: "Perfume Brand 25ml Invictus Paco Rabanne", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-20-16-622.jpg?updatedAt=1790815903862" },
+        { name: "Perfume Brand 25ml One Million", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-21-00-632.jpg?updatedAt=1790815903989" },
+        { name: "Body Splash Charmelle 60ml", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-24-21-742.jpg?updatedAt=1790815903812" },
+        { name: "Kit capilar Fruit therapy Abacate Glammour", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-25-07-397.jpg?updatedAt=1790815903636" },
+        { name: "Kit capilar Fruit therapy Coco Glammour", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-26-16-437.jpg?updatedAt=1790815903482" },
+        { name: "Kit capilar reparador Bamboo Glammour", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-27-24-889.jpg?updatedAt=1790815903698" },
+        { name: "Gloss labial Lip Honey", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-25-41-469.jpg?updatedAt=1790815903836" },
+        { name: "Gloss labial Chocolate Lip Bunny", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-28-15-171.jpg?updatedAt=1790815904249" },
+        { name: "Kit de Maquiagem 7 peças Amor e anjo", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-29-38-767.jpg?updatedAt=1790815904187" },
+        { name: "Gloss labial Starkiss makeup", price: "R$25,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-29-04-030.jpg?updatedAt=1790815903888" },
+        { name: "Kit cosméticos 7 peças Rosa Mosqueta", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-30-46-580.jpg?updatedAt=1790815903795" },
+        { name: "Lip Gloss labial Refrigerantes", price: "R$30,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-31-33-268.jpg?updatedAt=1790815903764" },
+        { name: "Sabonete hidratante Glicerinado Hydra Dermo Skin Veg 100g", price: "R$15,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-30-12-373.jpg?updatedAt=1790815903782" },
+        { name: "Perfume feminino Arabic Collection Rosa 25ml", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-32-43-875.jpg?updatedAt=1790815903647" },
+        { name: "Perfume Brand 25ml 212 VIP Rosé Carolina Herrera", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-34-53-596.jpg?updatedAt=1790815903530" },
+        { name: "Perfume Árabe Feminino Fakhar Rosa Lattafa", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-35-36-088.jpg?updatedAt=1790815903868" },
+        { name: "Perfume Brand 25ml La Belle Le Parfum Jean Paul Gaultier", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-37-01-838.jpg?updatedAt=1790815903491" },
+        { name: "Perfume Brand Feminino 25ml J'Adore Dior", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-37-43-206.jpg?updatedAt=1790815903556" },
+        { name: "Perfume Masculino One Million Paco Rabanne 100ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-36-25-436.jpg?updatedAt=1790815903308" },
+        { name: "Perfume Unissex Club de Nuit Milestone  105ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-38-44-548.jpg?updatedAt=1790815903861" },
+        { name: "Kit Capilar Cresce Mais Glammour", price: "R$210,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-40-48-137.jpg?updatedAt=1790815903669" },
+        { name: "Perfume Árabe Masculino Al Noble Ameer Lattafa 25ml", price: "R$230,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-40-00-906.jpg?updatedAt=1790815903739" },
+        { name: "Perfume Árabe Masculino Spectro 80ml", price: "R$250,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-41-50-173.jpg?updatedAt=1790815903311" },
+        { name: "Perfume Feminino Dream Brand Coconut 80ml", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-42-50-681.jpg?updatedAt=1790815903486" },
+        { name: "Perfume Masculino Dream Brand Attraction Men 100ml", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-45-24-982.jpg?updatedAt=1790815903726" },
+        { name: "Perfume Masculino Dream Brand Bad Boy Carolina Herrera 100ml", price: "R$390,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-46-08-807.jpg?updatedAt=1790815903911" },
+        { name: "Perfume capilar Glammour 60ml", price: "R$35,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-44-10-602.jpg?updatedAt=1790815903864" },]
     },
     {
       id: "moda-feminina",
@@ -918,7 +1228,21 @@ const CONFIG = {
         { name: "Camisa manga longa UV Dryfit masculino", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-23_18-13-28-601.jpg?updatedAt=1790381847323" },
         { name: "Jaqueta masculina Peluciada com zíper", price: "R$350,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-23_18-12-33-961.jpg?updatedAt=1790381847869" },
         { name: "Bermuda Tectel masculina Premium", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-23_18-10-49-800.jpg?updatedAt=1790381848084" },
-        { name: "Bermuda masculina tecnológica", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-23_18-09-16-615.jpg?updatedAt=1790381847790" }]
+        { name: "Bermuda masculina tecnológica", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-23_18-09-16-615.jpg?updatedAt=1790381847790" },
+        { name: "Suéter masculino fechado", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-11-56-196.jpg?updatedAt=1790815903774" },
+        { name: "Suéter masculino com zíper", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-12-28-172.jpg?updatedAt=1790815904097" },
+        { name: "Sueter de tricô masculino", price: "R$190,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-13-29-624.jpg?updatedAt=1790815903924" },
+        { name: "Short esportivo masculino 2 em 1", price: "R$120,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-13-01-873.jpg?updatedAt=1790815903396" },
+        { name: "Jaqueta Bobojaco masculino", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-14-01-413.jpg?updatedAt=1790815903871" },
+        { name: "Bermuda esportiva tecido leve", price: "R$60,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-14-29-960.jpg?updatedAt=1790815904401" },
+        { name: "Bermuda masculina Tectel premium", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-15-06-181.jpg?updatedAt=1790815903585" },
+        { name: "Bermuda masculina mauricinho de linho", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-15-36-555.jpg?updatedAt=1790815903507" },
+        { name: "Bermuda Cargo  masculina", price: "R$170,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-16-13-660.jpg?updatedAt=1790815903996" },
+        { name: "Bermuda Moletom masculino", price: "R$90,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-16-44-589.jpg?updatedAt=1790815903676" },
+        { name: "Bermuda Jeans rasgada masculina", price: "R$130,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-17-16-004.jpg?updatedAt=1790815904394" },
+        { name: "Bermuda Brim Masculina", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-17-58-227.jpg?updatedAt=1790815903975" },
+        { name: "Calça Jeans country Masculina", price: "R$290,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-18-31-134.jpg?updatedAt=1790815903813" },
+        { name: "Bermuda jeans masculina plus size", price: "R$160,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-09-30_21-19-05-869.jpg?updatedAt=1790815903575" },]
     },
     {
       id: "moda-infantil",
@@ -1199,8 +1523,9 @@ function render(searchTerm = "") {
   const query = normalizeText(searchTerm);
 
   nav.innerHTML = CONFIG.categories.map(cat =>
-    `<a class="category-pill" href="#${cat.id}">${escapeHtml(cat.name)}</a>`
+    `<a class="category-drawer-link" href="#${cat.id}">${escapeHtml(cat.name)}<span aria-hidden="true">›</span></a>`
   ).join("");
+  document.getElementById("categoryMenuCount").textContent = CONFIG.categories.length;
 
   let totalVisible = 0;
 
@@ -1249,6 +1574,43 @@ function render(searchTerm = "") {
   document.getElementById("topWhatsapp").href = url;
   document.getElementById("footerWhatsapp").href = url;
 }
+
+const categoryDrawer = document.getElementById("categoryDrawer");
+const categoryBackdrop = document.getElementById("categoryBackdrop");
+const openCategoriesButton = document.getElementById("openCategories");
+const closeCategoriesButton = document.getElementById("closeCategories");
+
+function openCategoryDrawer() {
+  categoryDrawer.classList.add("is-open");
+  categoryBackdrop.classList.add("is-open");
+  categoryDrawer.setAttribute("aria-hidden", "false");
+  categoryBackdrop.setAttribute("aria-hidden", "false");
+  openCategoriesButton.setAttribute("aria-expanded", "true");
+  document.body.classList.add("category-drawer-open");
+  closeCategoriesButton.focus();
+}
+
+function closeCategoryDrawer() {
+  categoryDrawer.classList.remove("is-open");
+  categoryBackdrop.classList.remove("is-open");
+  categoryDrawer.setAttribute("aria-hidden", "true");
+  categoryBackdrop.setAttribute("aria-hidden", "true");
+  openCategoriesButton.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("category-drawer-open");
+  openCategoriesButton.focus();
+}
+
+openCategoriesButton.addEventListener("click", openCategoryDrawer);
+closeCategoriesButton.addEventListener("click", closeCategoryDrawer);
+categoryBackdrop.addEventListener("click", closeCategoryDrawer);
+document.getElementById("categoryNav").addEventListener("click", function(event) {
+  if (event.target.closest("a")) closeCategoryDrawer();
+});
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape" && categoryDrawer.classList.contains("is-open")) {
+    closeCategoryDrawer();
+  }
+});
 
 const searchInput = document.getElementById("productSearch");
 searchInput.addEventListener("input", event => {
