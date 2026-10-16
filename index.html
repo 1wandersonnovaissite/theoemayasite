@@ -894,11 +894,13 @@ body.category-drawer-open{overflow:hidden}
       <div class="lightbox-name" id="lightboxName"></div>
       <div class="lightbox-price" id="lightboxPrice"></div>
       <div class="lightbox-actions">
-      <button type="button" class="lightbox-whatsapp" id="lightboxWhatsapp" aria-label="Pedir pelo WhatsApp" title="Pedir pelo WhatsApp">
+      <button type="button" class="lightbox-whatsapp" id="lightboxWhatsapp" aria-label="Encomendar produto pelo WhatsApp" title="Encomendar produto">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Encomendar produto</span>
       </button>
       <button type="button" class="lightbox-share" id="lightboxShare" aria-label="Compartilhar produto" title="Compartilhar produto">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.59 13.51 6.83 3.98"></path><path d="m15.41 6.51-6.82 3.98"></path></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.59 13.51 6.83 3.98"></path><path d="m15.41 6.51-6.82 3.98"></path></svg>
+        <span>Compartilhar</span>
       </button>
       </div>
     </div>
@@ -1205,7 +1207,38 @@ const CONFIG = {
         { name: "Panela de pressão 15 Litros Fechamento externo", price: "R$980,00", image: "https://ik.imagekit.io/theoemayamultimarcas/file_000000007fa8820ea7ac83d2543b9258.png?updatedAt=1791333277128" },
         { name: "Panela de pressão 20 Litros Fechamento externo", price: "R$1200,00", image: "https://ik.imagekit.io/theoemayamultimarcas/file_00000000582c820eaef7684014a81fdd.png?updatedAt=1791333277029" },
         { name: "Jogo de Jarra Crystal Daisy 1.5 litros com 6 copos", price: "R$280,00", image: "https://ik.imagekit.io/theoemayamultimarcas/file_00000000d210820ebbaa6702e9d679be.png?updatedAt=1791333277503" },
-        { name: "Jogo de cama Bordado 4 peças Top Max King", price: "R$360,00", image: "https://ik.imagekit.io/theoemayamultimarcas/file_00000000c0d0820e898cf07535a3f9b8.png?updatedAt=1791333277595" }
+        { name: "Jogo de cama Bordado 4 peças Top Max King", price: "R$360,00", image: "https://ik.imagekit.io/theoemayamultimarcas/file_00000000c0d0820e898cf07535a3f9b8.png?updatedAt=1791333277595" },
+        { name: 'Jogo de panelas usinadas grande 3 peças tampas de vidro', price: 'R$750,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_19-33-57-049.jpg?updatedAt=1792191658222' },
+        { name: 'Tapete Atlanta aveludado 2.0x2.40m', price: 'R$450,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_19-34-41-327.jpg?updatedAt=1792191665834' },
+        { name: 'Manta de sofá Amazon 1.80x2.40m', price: 'R$230,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_19-35-17-466.jpg?updatedAt=1792191667391' },
+        { name: 'Capa para máquina de lavar impermeável', price: 'R$160,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_19-35-53-691.jpg?updatedAt=1792191664798' },
+        { name: 'Kit de encaixe com bico para mangueira', price: 'R$45,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-34-16-905.jpg?updatedAt=1792191664295' },
+        { name: 'Cobreleito Infantil estampado Feminino', price: 'R$190,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_19-33-18-580.jpg?updatedAt=1792191666441' },
+        { name: 'Cobreleito Infantil estampado Masculino', price: 'R$190,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-34-52-921.jpg?updatedAt=1792191666667' },
+        { name: 'Isqueiro elétrico Recarregável', price: 'R$80,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-35-33-440.jpg?updatedAt=1792191664220' },
+        { name: 'Conjunto de chaves soquete CR-V 12 peças', price: 'R$150,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-36-10-302.jpg?updatedAt=1792191665141' },
+        { name: 'Pote térmico infantil com colher 530ml', price: 'R$120,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-36-53-416.jpg?updatedAt=1792191659348' },
+        { name: 'Cortina Jacquard Semi Blackout 2.80x2.60m', price: 'R$350,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-37-27-071.jpg?updatedAt=1792191665679' },
+        { name: 'Tapete de sala peludo grande 2.0x2.5m', price: 'R$380,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_21-38-00-781.jpg?updatedAt=1792191666496' },
+        { name: 'Copo Stanley térmico 1200ml Marmorizado', price: 'R$150,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-27-57-971.jpg?updatedAt=1792191657927' },
+        { name: 'Kit Garrafa térmica 1 litro com 6 canecas de vidro coloridas', price: 'R$230,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-28-42-331.jpg?updatedAt=1792191663980' },
+        { name: 'Jogo de taças Crystal Brand Verde Rojemac 320ml', price: 'R$190,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-29-26-189.jpg?updatedAt=1792191666367' },
+        { name: 'Jogo de taças Crystal Diamante Verde 340ml', price: 'R$170,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-30-05-352.jpg?updatedAt=1792191666440' },
+        { name: 'Jogo de taças Crystal Diamante Azul 340ml', price: 'R$170,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-30-41-950.jpg?updatedAt=1792191664955' },
+        { name: 'Jogo de copos Safira 330ml 6 peças', price: 'R$110,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-31-20-167.jpg?updatedAt=1792191664992' },
+        { name: 'Panela de pressão 3 litros polida', price: 'R$190,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-32-03-738.jpg?updatedAt=1792191661712' },
+        { name: 'Balcão Cooktop 5 bocas cinamomo', price: 'R$1100,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-32-46-650.jpg?updatedAt=1792191663311' },
+        { name: 'Jogo de formas assadeiras antiaderentes 3 peças', price: 'R$120,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-33-35-122.jpg?updatedAt=1792191662708' },
+        { name: 'Cobreleito dupla face King liso 2.80mx2.60m', price: 'R$320,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-34-29-646.jpg?updatedAt=1792191665581' },
+        { name: 'Kit organizadores de geladeira com cesto 5 peças', price: 'R$210,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-37-00-367.jpg?updatedAt=1792191656025' },
+        { name: 'Pote de vidro resistente com tampa Hermética', price: 'R$50,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-14_19-31-33-492.jpg?updatedAt=1792191655144' },
+        { name: 'Chaleira esmaltada 1.5 Litros', price: 'R$190,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-15_23-39-59-875.jpg?updatedAt=1792191653431' },
+        { name: 'Cadeira de camping desmontável com bolsa para transporte', price: 'R$190,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-16_19-37-13-412.jpg' },
+        { name: 'Jogo de potes Herméticos 11 peças com tampa', price: 'R$380,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-16_19-38-36-031.jpg?updatedAt=1792191664440' },
+        { name: 'Kit com 3 tábuas de corte MDF', price: 'R$80,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-16_19-39-23-661.jpg?updatedAt=1792191658301' },
+        { name: 'Tábua de corte MDF com Mini faca', price: 'R$70,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-16_19-40-02-894.jpg?updatedAt=1792191660968' },
+        { name: 'Cobreleito Lunax Queen estampado com 2 porta travesseiros', price: 'R$260,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-16_19-42-13-592.jpg?updatedAt=1792191667474' },
+        { name: 'Lençol de malha King com elástico e porta travesseiros', price: 'R$140,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-16_19-55-45-565.jpg?updatedAt=1792191664054' }
       ]
     },
     {
@@ -1421,7 +1454,9 @@ const CONFIG = {
         { name: "Perfume importado Masculino One Million Royal 100ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-34-21-528.jpg?updatedAt=1791658663886" },
         { name: "Perfume importado Masculino 212 VIP Black 100ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-32-46-848.jpg?updatedAt=1791658663513" },
         { name: "Perfume importado Masculino 212 Sexy Men 100ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-32-14-828.jpg?updatedAt=1791658663637" },
-        { name: "Perfume importado Feminino 212 VIP Rosé 80ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-33-46-160.jpg?updatedAt=1791658663909" }
+        { name: "Perfume importado Feminino 212 VIP Rosé 80ml", price: "R$490,00", image: "https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-33-46-160.jpg?updatedAt=1791658663909" },
+        { name: 'Kit de cosméticos Puro leite Coloré', price: 'R$110,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-38-22-304.jpg?updatedAt=1792191647170' },
+        { name: 'Kit capilar Nutrição Glow me 4 itens', price: 'R$250,00', image: 'https://ik.imagekit.io/theoemayamultimarcas/Picsart_26-10-06_22-36-45-409.jpg?updatedAt=1792191647813' }
       ]
     },
     {
@@ -2078,5 +2113,27 @@ footer .footer-copy{
  color:#555 !important;
  font-size:13px;
  line-height:1.7;
+}
+</style>
+
+
+<style>
+/* Botões do visualizador: ícone e texto lado a lado */
+.lightbox-actions{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;width:100%}
+.lightbox-actions .lightbox-whatsapp,.lightbox-actions .lightbox-share{
+  width:auto;height:50px;min-width:0;flex:0 1 auto;margin:0;padding:0 16px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;font:700 13px/1.2 inherit;white-space:nowrap;
+}
+.lightbox-actions .lightbox-whatsapp{background:#25d366;color:#fff;box-shadow:0 4px 10px rgba(37,211,102,.22)}
+.lightbox-actions .lightbox-whatsapp:hover{background:#1ebe57}
+.lightbox-actions .lightbox-share{background:#fff;color:#222;border:1px solid #dedede;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.lightbox-actions .lightbox-whatsapp svg{width:23px;height:23px;flex:none}
+.lightbox-actions .lightbox-share svg{width:21px;height:21px;flex:none}
+@media(max-width:420px){
+  .lightbox-actions{gap:8px}
+  .lightbox-actions .lightbox-whatsapp,.lightbox-actions .lightbox-share{padding:0 11px;gap:6px;font-size:12px}
+  .lightbox-actions .lightbox-whatsapp svg{width:21px;height:21px}
+  .lightbox-actions .lightbox-share svg{width:19px;height:19px}
 }
 </style>
